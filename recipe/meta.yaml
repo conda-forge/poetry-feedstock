@@ -9,7 +9,7 @@ source:
   sha256: bf4d11525c261b1de0ca60780908fbd7a0c3136ebe05a3119879a89797c91005
 
 build:
-  number: 0
+  number: 1000
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
   entry_points:
     - poetry = poetry.console:main
