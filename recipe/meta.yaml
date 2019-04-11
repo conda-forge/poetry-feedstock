@@ -9,7 +9,7 @@ source:
   sha256: e76f11e5dfd0edfc0cd2cdd64463703f1223bac56758c1f3a0080838f01b43a6
 
 build:
-  number: 1000
+  number: 1001
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
   entry_points:
     - poetry = poetry.console:main
@@ -33,8 +33,10 @@ requirements:
     - requests >=2.18,<3.0
     - requests-toolbelt >=0.8.0,<0.9.0
     - shellingham >=1.1,<2.0
-    - tomlkit >=0.4.4,<0.5.0
+    - tomlkit >=0.5.1,<0.6.0
     - virtualenv >=16.0,<17.0  # [py27]
+    - functools32              # [py27]
+    - glob2                    # [py27]
     - typing >=3.6,<4.0  # [py<35]
     - pathlib2 >=2.3,<3.0  # [py<35]
 
