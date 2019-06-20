@@ -22,6 +22,18 @@ jobs:
         CONFIG: linux_aarch64_python3.7
         UPLOAD_PACKAGES: True
         DOCKER_IMAGE: condaforge/linux-anvil-aarch64
+      linux_ppc64le_python2.7:
+        CONFIG: linux_ppc64le_python2.7
+        UPLOAD_PACKAGES: True
+        DOCKER_IMAGE: condaforge/linux-anvil-ppc64le
+      linux_ppc64le_python3.6:
+        CONFIG: linux_ppc64le_python3.6
+        UPLOAD_PACKAGES: True
+        DOCKER_IMAGE: condaforge/linux-anvil-ppc64le
+      linux_ppc64le_python3.7:
+        CONFIG: linux_ppc64le_python3.7
+        UPLOAD_PACKAGES: True
+        DOCKER_IMAGE: condaforge/linux-anvil-ppc64le
       linux_python2.7:
         CONFIG: linux_python2.7
         UPLOAD_PACKAGES: True
