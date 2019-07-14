@@ -9,7 +9,7 @@ source:
   sha256: 6e535de38df7e6ab46ff8d197f53632b071675287d1477efc7bf4a5c4c63bc3f
 
 build:
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
   entry_points:
     - poetry = poetry.console:main
@@ -21,6 +21,7 @@ requirements:
   run:
     - python
     - cachecontrol >=0.12.4,<0.13.0
+    - lockfile >=0.9
     - cachy >=0.2,<0.3
     - cleo >=0.6.7,<0.7.0
     - html5lib >=1.0,<2.0
