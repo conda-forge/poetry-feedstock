@@ -10,6 +10,8 @@ source:
 
 build:
   number: 0
+  # poetry still supports py2k but conda-forge does not have all the old deps for it.
+  skip: True  # [py2k]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - poetry = poetry.console:main
