@@ -20,10 +20,11 @@ requirements:
     - pip
     - intreehooks
     - cachecontrol >=0.12.4,<0.13.0
-    - lockfile >=0.9  # cachecontrol:filecache
+    # cachecontrol:filecache
+    - lockfile >=0.9
     - cachy >=0.3.0,<0.4.0
     - cleo >=0.7.6,<0.8.0
-    - clikit >=0.4.1,<0.5.0
+    - clikit >=0.4.2,<0.5.0
     - html5lib >=1.0,<2.0
     - jsonschema >=3.1,<4.0
     - pexpect >=4.7.0,<5.0.0
@@ -33,25 +34,26 @@ requirements:
     - requests-toolbelt >=0.8.0,<0.9.0
     - requests >=2.18,<3.0
     - shellingham >=1.1,<2.0
-    - tomlkit >=0.5.8,<0.6.0
+    - tomlkit >=0.5.11,<0.6.0
     # legacy python
+    - importlib_metadata >=1.1.3,<1.2.0  # [py<38]
+    - virtualenv >=16.7.9,<17.0.0  # [py27]
+    - functools32 >=3.2.3,<4.0.0  # [py27]
     - typing >=3.6,<4  # [py<35]
-    - pathlib2 >=2.3,<3  # [py<35]
-    - glob2 >=0.6,<1  # [py<35]
-    - keyring >=18.0,<19  # [py<35]
-    - virtualenv >=16.0,<17  # [py27]
-    - functools32 >=3.2.3,<3.3  # [py27]
+    - pathlib2 >=2.3,<3.0  # [py<35]
+    - glob2 >=0.6,<0.7  # [py<35]
+    - keyring >=18.0.1,<19  # [py<35]
     - subprocess32 >=3.5,<4  # [py<35]
-    - importlib_metadata >=0.23,<1  # [py<38]
     # modern python
-    - keyring >=19.0,<20  # [py>=35]
+    - keyring >=18.0.1,<19.0.0  # [py>=35]
   run:
     - python
     - cachecontrol >=0.12.4,<0.13.0
-    - lockfile >=0.9  # cachecontrol:filecache
+    # cachecontrol:filecache
+    - lockfile >=0.9
     - cachy >=0.3.0,<0.4.0
     - cleo >=0.7.6,<0.8.0
-    - clikit >=0.4.1,<0.5.0
+    - clikit >=0.4.2,<0.5.0
     - html5lib >=1.0,<2.0
     - jsonschema >=3.1,<4.0
     - pexpect >=4.7.0,<5.0.0
@@ -61,49 +63,28 @@ requirements:
     - requests-toolbelt >=0.8.0,<0.9.0
     - requests >=2.18,<3.0
     - shellingham >=1.1,<2.0
-    - tomlkit >=0.5.8,<0.6.0
+    - tomlkit >=0.5.11,<0.6.0
     # legacy python
+    - importlib_metadata >=1.1.3,<1.2.0  # [py<38]
+    - virtualenv >=16.7.9,<17.0.0  # [py27]
+    - functools32 >=3.2.3,<4.0.0  # [py27]
     - typing >=3.6,<4  # [py<35]
-    - pathlib2 >=2.3,<3  # [py<35]
-    - glob2 >=0.6,<1  # [py<35]
-    - keyring >=18.0,<19  # [py<35]
-    - virtualenv >=16.0,<17  # [py27]
-    - functools32 >=3.2.3,<3.3  # [py27]
+    - pathlib2 >=2.3,<3.0  # [py<35]
+    - glob2 >=0.6,<0.7  # [py<35]
+    - keyring >=18.0.1,<19  # [py<35]
     - subprocess32 >=3.5,<4  # [py<35]
-    - importlib_metadata >=0.23,<1  # [py<38]
     # modern python
-    - keyring >=19.0,<20  # [py>=35]
+    - keyring >=18.0.1,<19.0.0  # [py>=35]
 
 test:
+  requires:
+    - pip
+  commands:
+    - pip check
   imports:
     - poetry
-    - poetry.console
-    - poetry.console.commands
-    - poetry.console.commands.cache
-    - poetry.console.commands.debug
-    - poetry.console.commands.self
-    - poetry.installation
-    - poetry.io
-    - poetry.json
-    - poetry.layouts
-    - poetry.masonry
-    - poetry.masonry.builders
-    - poetry.masonry.publishing
-    - poetry.masonry.utils
-    - poetry.mixology
-    - poetry.packages
-    - poetry.packages.constraints
-    - poetry.packages.utils
-    - poetry.puzzle
-    - poetry.puzzle.operations
-    - poetry.repositories
-    - poetry.semver
-    - poetry.spdx
-    - poetry.utils
-    - poetry.vcs
-    - poetry.version
   commands:
-    - poetry --help
+    - poetry -V
 
 about:
   home: https://poetry.eustace.io/
