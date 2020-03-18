@@ -9,7 +9,7 @@ source:
   sha256: 8e195ea8a4bce4f418a23fd828aa2f9ce06be7655720efd1d95beb0ee641030a
 
 build:
-  number: 0
+  number: 1
   # poetry still supports py2k but conda-forge does not have all the old deps for it.
   skip: True  # [py2k]
   script: {{ PYTHON }} -m pip install . --no-deps -vv
