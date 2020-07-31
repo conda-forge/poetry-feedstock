@@ -9,7 +9,7 @@ source:
   sha256: 0a4c56983546964b47cbbe0e1b49fef5662277bbf0673e3e350e1215560377ab
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - poetry = poetry.console:main
@@ -66,11 +66,10 @@ test:
   requires:
     - pip
   commands:
+    - poetry -V
     - pip check
   imports:
     - poetry
-  commands:
-    - poetry -V
 
 about:
   home: https://poetry.eustace.io/
