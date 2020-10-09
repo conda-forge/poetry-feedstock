@@ -46,10 +46,11 @@ requirements:
     - importlib-metadata >=1.6.0,<2.0.0  # [py<38]
 
 test:
-  requires:
-    - pip
+  # cannot do pip check b/c pip wants a non-windows dep in a windows package :-(
+  # requires:
+  #   - pip
   commands:
-    - pip check
+  #   - pip check
     - poetry -V
   imports:
     - poetry
