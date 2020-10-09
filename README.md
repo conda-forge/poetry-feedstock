@@ -5,11 +5,9 @@ Home: https://poetry.eustace.io/
 
 Package license: MIT
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/poetry-feedstock/blob/master/LICENSE.txt)
 
 Summary: Python dependency management and packaging made easy
-
-
 
 Current build status
 ====================
