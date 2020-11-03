@@ -38,7 +38,7 @@ requirements:
     - packaging >=20.4,<21.0
     - poetry-core >=1.0.0,<2.0.0
     - virtualenv >=20.0.26,<21.0.0
-    - keyring >=21.2.0,<21.3.0  # [py>=36]
+    - keyring >=21.2.0,<22.0.0  # [py>=36]
     # legacy python
     - importlib-metadata >=1.6.0,<2.0.0  # [py<38]
 
