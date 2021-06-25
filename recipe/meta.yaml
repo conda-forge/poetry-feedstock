@@ -31,6 +31,7 @@ requirements:
     - cachy >=0.3.0,<0.4.0
     - cleo >=0.8.1,<0.9.0
     - clikit >=0.6.2,<0.7.0
+    - crashtest >=0.3.0,<0.4.0  # [py>=36]
     - html5lib >=1.0,<2.0
     - jsonschema >=3.1,<4.0
     - pexpect >=4.7.0,<5.0.0
@@ -42,18 +43,17 @@ requirements:
     - shellingham >=1.1,<2.0
     - tomlkit >=0.7.0,<1.0.0
     - packaging >=20.4,<21.0
-    - poetry-core >=1.0.0,<2.0.0
+    - poetry-core >=1.0.3,<1.1.0
     - virtualenv >=20.0.26,<21.0.0
     - keyring >=21.2.0,<21.3.0  # [py>=36]
     # legacy python
     - importlib-metadata >=1.6.0,<2.0.0  # [py<38]
 
 test:
-  # cannot do pip check b/c pip wants a non-windows dep in a windows package :-(
-  # requires:
-  #   - pip
+  requires:
+    - pip
   commands:
-  #   - pip check
+    - pip check
     - poetry -V
   imports:
     - poetry
