@@ -43,7 +43,7 @@ requirements:
     - shellingham >=1.1,<2.0
     - tomlkit >=0.7.0,<1.0.0
     - packaging >=20.4,<21.0
-    - poetry-core >=1.0.3,<1.1.0
+    - poetry-core >=1.0.4,<1.1.0
     - virtualenv >=20.0.26,<21.0.0
     - keyring >=21.2.0,<21.3.0  # [py>=36]
     # legacy python
