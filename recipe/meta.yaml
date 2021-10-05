@@ -1,4 +1,4 @@
-{% set version = "1.1.10" %}
+{% set version = "1.1.11" %}
 
 package:
   name: poetry
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/poetry/poetry-{{ version }}.tar.gz
-  sha256: 284ab7685a2b0549bd34161db0ee3c51d67991f53054564293391a0c8a346b7c
+  sha256: 7d7d22f55fbebb830cc85b1c69cd7a91fd85f49e5396e7a14b953645a470f69e
 
 build:
   number: 0
@@ -33,21 +33,18 @@ requirements:
     - clikit >=0.6.2,<0.7.0
     - crashtest >=0.3.0,<0.4.0  # [py>=36]
     - html5lib >=1.0,<2.0
+    - importlib-metadata >=1.6.0,<2.0.0  # [py<38]
     - jsonschema >=3.1,<4.0
     - pexpect >=4.7.0,<5.0.0
     - pkginfo >=1.4,<2.0
-    - pyparsing >=2.2,<3.0
-    - pyrsistent >=0.14.2,<0.15.0
+    - poetry-core >=1.0.7,<1.1.0
     - requests-toolbelt >=0.9.1,<0.10.0
     - requests >=2.18,<3.0
     - shellingham >=1.1,<2.0
     - tomlkit >=0.7.0,<1.0.0
     - packaging >=20.4,<21.0
-    - poetry-core >=1.0.6,<1.1.0
     - virtualenv >=20.0.26,<21.0.0
     - keyring >=21.2.0,<21.3.0  # [py>=36]
-    # legacy python
-    - importlib-metadata >=1.6.0,<2.0.0  # [py<38]
 
 test:
   requires:
