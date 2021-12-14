@@ -1,4 +1,4 @@
-{% set version = "1.1.11" %}
+{% set version = "1.1.12" %}
 
 package:
   name: poetry
@@ -6,11 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/poetry/poetry-{{ version }}.tar.gz
-  sha256: 7d7d22f55fbebb830cc85b1c69cd7a91fd85f49e5396e7a14b953645a470f69e
+  sha256: 5c66e2357fe37b552462a88b7d31bfa2ed8e84172208becd666933c776252567
 
 build:
-  number: 1
-  skip: true  # [py<35]
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - poetry = poetry.console:main
@@ -22,29 +21,35 @@ requirements:
   host:
     - python
     - pip
-    - poetry-core >=1.0.6,<1.1.0
+    - poetry-core >=1.0.7,<1.1.0
   run:
+    # Update version number in URL before checking dependencies
+    # https://github.com/python-poetry/poetry/blob/1.1.12/pyproject.toml
     - python
-    - cachecontrol >=0.12.4,<0.13.0
-    # cachecontrol:filecache
-    - lockfile >=0.9
-    - cachy >=0.3.0,<0.4.0
+    - poetry-core >=1.0.7,<1.1.0
     - cleo >=0.8.1,<0.9.0
     - clikit >=0.6.2,<0.7.0
-    - crashtest >=0.3.0,<0.4.0  # [py>=36]
-    - html5lib >=1.0,<2.0
-    - importlib-metadata >=1.6.0,<2.0.0  # [py<38]
-    - jsonschema >=3.1,<4.0
-    - pexpect >=4.7.0,<5.0.0
-    - pkginfo >=1.4,<2.0
-    - poetry-core >=1.0.7,<1.1.0
-    - requests-toolbelt >=0.9.1,<0.10.0
+    - crashtest >=0.3.0,<0.4.0
     - requests >=2.18,<3.0
+    - cachy >=0.3.0,<0.4.0
+    - requests-toolbelt >=0.9.1,<0.10.0
+    - cachecontrol >=0.12.9,<0.13.0
+
+    # cachecontrol:filecache  <https://github.com/ionrock/cachecontrol/blob/master/setup.py>
+    - lockfile >=0.9
+
+    - pkginfo >=1.4,<2.0
+    - html5lib >=1.0,<2.0
     - shellingham >=1.1,<2.0
     - tomlkit >=0.7.0,<1.0.0
+    - pexpect >=4.7.0,<5.0.0
     - packaging >=20.4,<21.0
     - virtualenv >=20.0.26,<21.0.0
-    - keyring >=21.2.0,<21.3.0  # [py>=36]
+    - keyring >=21.2.0,<21.3.0
+    - importlib-metadata >=1.6.0,<2.0.0  # [py<38]
+
+    # Workaround for <https://github.com/conda-forge/pexpect-feedstock/issues/26>
+    - ptyprocess >=0.5
 
 test:
   requires:
