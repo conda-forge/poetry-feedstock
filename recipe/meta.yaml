@@ -62,13 +62,16 @@ test:
     - poetry.config
 
 about:
-  home: https://poetry.eustace.io/
+  home: https://python-poetry.org/
   license: MIT
   license_family: MIT
   license_file: LICENSE
   summary: Python dependency management and packaging made easy
+  dev_url: https://github.com/python-poetry/poetry
+  doc_url: https://python-poetry.org/docs/
 
 extra:
   recipe-maintainers:
     - ocefpaf
     - maresb
+    - xylar
