@@ -1,13 +1,17 @@
 About poetry
 ============
 
-Home: https://poetry.eustace.io/
+Home: https://python-poetry.org/
 
 Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/poetry-feedstock/blob/master/LICENSE.txt)
 
 Summary: Python dependency management and packaging made easy
+
+Development: https://github.com/python-poetry/poetry
+
+Documentation: https://python-poetry.org/docs/
 
 Current build status
 ====================
@@ -291,4 +295,5 @@ Feedstock Maintainers
 
 * [@maresb](https://github.com/maresb/)
 * [@ocefpaf](https://github.com/ocefpaf/)
+* [@xylar](https://github.com/xylar/)
 
