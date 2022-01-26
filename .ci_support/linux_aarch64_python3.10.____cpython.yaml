@@ -5,9 +5,9 @@ cdt_arch:
 cdt_name:
 - cos7
 channel_sources:
-- conda-forge
+- conda-forge/label/poetry_dev,conda-forge/label/cleo_dev,conda-forge,defaults
 channel_targets:
-- conda-forge main
+- conda-forge poetry_dev
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 pin_run_as_build:
