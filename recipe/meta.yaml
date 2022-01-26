@@ -23,8 +23,7 @@ requirements:
     - pip
     - poetry-core >=1.1.0a6,<2.0.0
   run:
-    # Update version number in URL before checking dependencies
-    # https://github.com/python-poetry/poetry/blob/1.1.12/pyproject.toml
+    # https://github.com/python-poetry/poetry/blob/{{ version }}/pyproject.toml
     - python
     - poetry-core >=1.1.0a6,<2.0.0
     - cleo >=1.0.0a4,<2.0.0
@@ -34,7 +33,7 @@ requirements:
     - requests-toolbelt >=0.9.1,<0.10.0
     - cachecontrol >=0.12.4,<0.13.0
 
-    # cachecontrol:filecache  <https://github.com/ionrock/cachecontrol/blob/master/setup.py>
+    # cachecontrol:filecache  <https://github.com/ionrock/v{{ cachecontrol_version }}/blob/master/setup.py>
     - lockfile >=0.9
 
     - pkginfo >=1.5,<2.0
