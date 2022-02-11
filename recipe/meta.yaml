@@ -45,7 +45,7 @@ requirements:
     - pexpect >=4.7.0,<5.0.0
     - packaging >=20.4,<21.0
     - virtualenv >=20.0.26,<21.0.0
-    - keyring >=21.2.0,<21.3.0
+    - keyring >=21.2.0
     - importlib-metadata >=1.6.0,<2.0.0  # [py<38]
 
     # Workaround for <https://github.com/conda-forge/pexpect-feedstock/issues/26>
