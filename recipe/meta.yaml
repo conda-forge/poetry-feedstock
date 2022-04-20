@@ -9,7 +9,7 @@ source:
   sha256: b905ed610085f568aa61574e0e09260c02bff9eae12ff672af39e9f399357ac4
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - poetry = poetry.console:main
