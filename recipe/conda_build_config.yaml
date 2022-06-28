@@ -1,5 +1,5 @@
 channel_sources:
-  - conda-forge/label/poetry_dev,conda-forge/label/cleo_dev,conda-forge,defaults
+  - conda-forge/label/poetry_dev,conda-forge/label/cleo_dev,conda-forge
 channel_targets:
   - conda-forge poetry_dev
 
