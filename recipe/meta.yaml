@@ -1,4 +1,4 @@
-{% set version = "1.1.14" %}
+{% set version = "1.1.15" %}
 
 package:
   name: poetry
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/poetry/poetry-{{ version }}.tar.gz
-  sha256: 8b5a7676cda9b9e85c71743c672352cabcb6e2f647b6b88fa95e4f374bc8edce
+  sha256: a373848fd205f31b2f6bee6b87a201ea1e09ca573a2f40d0991539f564cedffd
 
 build:
   number: 0
