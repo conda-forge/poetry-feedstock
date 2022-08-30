@@ -7,6 +7,8 @@ package:
 source:
   url: https://pypi.io/packages/source/p/poetry/poetry-{{ version }}.tar.gz
   sha256: 137c8a2f48cdbbc211909f8ea1f244955657a1039a81900ab857a604d70048b1
+  patches:
+    - 0001-remove-poetry-plugin-export.patch
 
 build:
   number: 1
@@ -26,7 +28,7 @@ requirements:
     # https://github.com/python-poetry/poetry/blob/{{ version }}/pyproject.toml
     - python
     - poetry-core >=1.1.0rc2,<2.0.0
-    - poetry-plugin-export >=1.0.6,<2.0.0
+    # - poetry-plugin-export >=1.0.6,<2.0.0
 
     - cachecontrol >=0.12.9,<0.13.0
 
