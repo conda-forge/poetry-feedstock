@@ -1,0 +1,11 @@
+diff -ruN poetry-1.2.0rc2/pyproject.toml poetry-1.2.0rc2-patch/pyproject.toml
+--- poetry-1.2.0rc2/pyproject.toml	2022-08-26 16:12:25.987275800 +0200
++++ poetry-1.2.0rc2-patch/pyproject.toml	2022-08-30 18:59:44.040028482 +0200
+@@ -45,7 +45,6 @@
+ python = "^3.7"
+ 
+ poetry-core = "^1.1.0rc2"
+-poetry-plugin-export = "^1.0.6"
+ cachecontrol = { version = "^0.12.9", extras = ["filecache"] }
+ cachy = "^0.3.0"
+ cleo = "^1.0.0a5"

@@ -1,4 +1,4 @@
-{% set version = "1.2.0b1" %}
+{% set version = "1.2.0rc2" %}
 
 package:
   name: poetry
@@ -6,7 +6,9 @@ package:
 
 source:
   url: https://pypi.io/packages/source/p/poetry/poetry-{{ version }}.tar.gz
-  sha256: 26cf8d309a74fff25d768219c2215a989a530acab886c01de3db07ab70bc7abf
+  sha256: 137c8a2f48cdbbc211909f8ea1f244955657a1039a81900ab857a604d70048b1
+  patches:
+    - 0001-remove-poetry-plugin-export.patch
 
 build:
   number: 1
@@ -21,11 +23,12 @@ requirements:
   host:
     - python
     - pip
-    - poetry-core >=1.1.0a6,<2.0.0
+    - poetry-core >=1.1.0rc2,<2.0.0
   run:
     # https://github.com/python-poetry/poetry/blob/{{ version }}/pyproject.toml
     - python
-    - poetry-core >=1.1.0a7,<2.0.0
+    - poetry-core >=1.1.0rc2,<2.0.0
+    # - poetry-plugin-export >=1.0.6,<2.0.0
 
     - cachecontrol >=0.12.9,<0.13.0
 
@@ -33,21 +36,24 @@ requirements:
     - lockfile >=0.9
 
     - cachy >=0.3.0,<0.4.0
-    - cleo >=1.0.0a4,<2.0.0
+    - cleo >=1.0.0a5,<2.0.0
     - crashtest >=0.3.0,<0.4.0
-    - entrypoints >=0.3,<0.4
     - html5lib >=1.0,<2.0
-    - importlib-metadata >=1.6.0  # [py<38]
+    - importlib-metadata >=4.4,<5.0  # [py<310]
+    - jsonschema >=4.10.0,<5.0.0
     - keyring >=21.2.0
-    - packaging >=20.4,<21.0
+    - packaging >=20.4
     - pexpect >=4.7.0,<5.0.0
     - pkginfo >=1.5,<2.0
+    - platformdirs >=2.5.2,<3.0.0
     - requests >=2.18,<3.0
     - requests-toolbelt >=0.9.1,<0.10.0
-    - shellingham >=1.1,<2.0
-    - tomlkit >=0.7.0,<1.0.0
-    - virtualenv >=20.4.3,<20.4.5|>=20.4.7
+    - shellingham >=1.5,<2.0
+    - tomlkit >=0.11.1,<1.0.0,!=0.11.2,!=0.11.3
+    - virtualenv
+    - xattr >=0.9.7,<0.10.0  # [osx]
     - urllib3 >=1.26.0,<2.0.0
+    - dulwich >=0.20.44,<0.21.0
 
 test:
   requires:
