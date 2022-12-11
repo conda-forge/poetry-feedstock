@@ -27,7 +27,7 @@ requirements:
     - poetry-plugin-export >=1.2.0,<2.0.0
     - backports.cached-property >=1.0.2,<2.0.0  # [py<38]
     - cachecontrol >=0.12.9,<0.13.0
-    
+
     # cachecontrol filecache extra
     - filelock >=3.8.0
 
@@ -55,6 +55,9 @@ requirements:
     # xattr doesn't exist for Windows, necessitating noarch for this feedstock.
     - xattr >=0.10.0,<0.11.0  # [darwin]
     - urllib3 >=1.26.0,<2.0.0
+
+    # `poetry` entry point fails without this:
+    - lockfile >=0.9
 
 test:
   requires:
