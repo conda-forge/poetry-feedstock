@@ -53,7 +53,7 @@ requirements:
     - virtualenv >=20.4.3,<21.0.0,!=20.4.5,!=20.4.6  # [not win or py!=39]
     - virtualenv >=20.4.3,<20.16.6,!=20.4.5,!=20.4.6  # [win and py==39]
     # xattr doesn't exist for Windows, necessitating noarch for this feedstock.
-    - xattr >=0.10.0,<0.11.0  # [darwin]
+    - xattr >=0.10.0,<0.11.0  # [osx]
     - urllib3 >=1.26.0,<2.0.0
 
     # `poetry` entry point fails without this:
