@@ -1,11 +1,12 @@
+{% set name = "poetry" %}
 {% set version = "1.3.1" %}
 
 package:
-  name: poetry
+  name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/p/poetry/poetry-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/poetry-{{ version }}.tar.gz
   sha256: fde98462ad5dc9879393157da93092206a3411117e25a4761a41c6d08f31aea8
 
 build:
@@ -42,6 +43,7 @@ requirements:
     - importlib-metadata >=4.4,<5.0  # [py<310]
     - jsonschema >=4.10.0,<5.0.0
     - keyring >=23.9.0,<24.0.0
+    - lockfile >=0.12.2,<0.13.0
     - packaging >=20.4
     - pexpect >=4.7.0,<5.0.0
     - pkginfo >=1.5,<2.0
@@ -58,9 +60,6 @@ requirements:
     # xattr doesn't exist for Windows, necessitating noarch for this feedstock.
     - xattr >=0.10.0,<0.11.0  # [osx]
     - urllib3 >=1.26.0,<2.0.0
-
-    # `poetry` entry point fails without this:
-    - lockfile >=0.9
 
 test:
   requires:
