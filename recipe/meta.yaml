@@ -1,5 +1,5 @@
 {% set name = "poetry" %}
-{% set version = "1.3.2" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/poetry-{{ version }}.tar.gz
-  sha256: 26ded25f0cf67943243ca4f0aafd47ec4668bdb62845dbb8c2b0e3d9cd280bf4
+  sha256: 151ad741e163a329c8b13ea602dde979b7616fc350cfcff74b604e93263934a8
 
 build:
   noarch: python
