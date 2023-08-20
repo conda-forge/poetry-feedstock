@@ -22,19 +22,19 @@ build:
 
 requirements:
   host:
-    - python >=3.7,<4.0
+    - python >=3.8,<4.0
     - poetry-core >=1.5.0
     - pip
   run:
     # Update version number in URL before checking dependencies
     # https://github.com/python-poetry/poetry/blob/1.4.0/pyproject.toml
-    - python >=3.7.0,<4.0.0
-    - poetry-core 1.6.1
-    - poetry-plugin-export >=1.4.0,<2.0.0
+    - python >=3.8,<4.0
+    - poetry-core ==1.7.0
+    - poetry-plugin-export >=1.5.0,<2.0.0
     # for all python so we can stay noarch: python
     - backports.cached-property >=1.0.2,<2.0.0
     - python-build >=0.10.0,<0.11.0
-    - cachecontrol-with-filecache >=0.12.9,<0.13.0
+    - cachecontrol-with-filecache >=0.13.0,<0.14.0
     - cleo >=2.0.0,<3.0.0
     - crashtest >=0.4.1,<0.5.0
     - dulwich >=0.21.2,<0.22.0
@@ -43,9 +43,8 @@ requirements:
     # for all python to stay noarch: python
     - importlib-metadata >=4.4
     - python-installer >=0.7.0,<0.8.0
-    - jsonschema >=4.10.0,<5.0.0
-    - keyring >=23.9.0,<24.0.0
-    - lockfile >=0.12.2,<0.13.0
+    - jsonschema >=4.10.0,<4.18.0
+    - keyring >=24.0.0,<25.0.0
     - packaging >=20.4
     - pexpect >=4.7.0,<5.0.0
     - pkginfo >=1.9.4,<2.0
@@ -60,7 +59,6 @@ requirements:
     # See <https://github.com/python-poetry/poetry/pull/6950>
     - virtualenv >=20.22.0,<21.0.0
     - xattr >=0.10.0,<0.11.0  # [osx]
-    - urllib3 >=1.26.0,<2.0.0
 
     # Keep the package noarch
     - __linux  # [linux]
