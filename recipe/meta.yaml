@@ -32,7 +32,6 @@ requirements:
     - poetry-core ==1.7.0
     - poetry-plugin-export >=1.5.0,<2.0.0
     # for all python so we can stay noarch: python
-    - backports.cached-property >=1.0.2,<2.0.0
     - python-build >=0.10.0,<0.11.0
     - cachecontrol-with-filecache >=0.13.0,<0.14.0
     - cleo >=2.0.0,<3.0.0
