@@ -27,7 +27,7 @@ requirements:
     - pip
   run:
     # Update version number in URL before checking dependencies
-    # https://github.com/python-poetry/poetry/blob/1.6.1/pyproject.toml
+    # https://github.com/python-poetry/poetry/blob/1.7.0/pyproject.toml
     - python >=3.8,<4.0
     - poetry-core ==1.8.1
     - poetry-plugin-export >=1.6.0,<2.0.0
