@@ -1,5 +1,5 @@
 {% set name = "poetry" %}
-{% set version = "1.7.0" %}
+{% set version = "1.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/poetry-{{ version }}.tar.gz
-  sha256: 796e2866f35cb57af36280a890f5a5b3f9ef1a2dcf780b945b02be2e82895391
+  sha256: b348a70e7d67ad9c0bd3d0ea255bc6df84c24cf4b16f8d104adb30b425d6ff32
 
 build:
   noarch: python
@@ -28,8 +28,10 @@ requirements:
   run:
     # Update version number in URL before checking dependencies
     # https://github.com/python-poetry/poetry/blob/1.7.0/pyproject.toml
+    - build >=1.0.3,<2.0.0
+    - cachecontrol >=0.13.0,<0.14.0
     - python >=3.8,<4.0
-    - poetry-core ==1.8.1
+    - poetry-core 1.8.1
     - poetry-plugin-export >=1.6.0,<2.0.0
     - python-build >=1.0.3,<2.0.0
     - cachecontrol-with-filecache >=0.13.0,<0.14.0
@@ -43,10 +45,10 @@ requirements:
     - keyring >=24.0.0,<25.0.0
     - packaging >=20.5
     - pexpect >=4.7.0,<5.0.0
-    - pkginfo >=1.9.4,<2.0
+    - pkginfo >=1.9.4,<2.0.0
     - platformdirs >=3.0.0,<4.0.0
     - pyproject_hooks >=1.0.0,<2.0.0
-    - requests >=2.26,<3.0
+    - requests >=2.26.0,<3.0.0
     - requests-toolbelt >=0.9.1,<2
     - shellingham >=1.5.0,<2.0.0
     # for all python to stay noarch: python
