@@ -28,12 +28,13 @@ requirements:
   run:
     # Update version number in URL before checking dependencies
     # https://github.com/python-poetry/poetry/blob/1.7.1/pyproject.toml
-    - cachecontrol >=0.14.0,<0.15.0
     - python >=3.8,<4.0
     - poetry-core 1.9.0
     - poetry-plugin-export >=1.6.0,<2.0.0
     - python-build >=1.0.3,<2.0.0
-    - cachecontrol-with-filecache >=0.14.0,<0.15.0
+    # the following syntax makes the update-grayskull bot happier
+    - cachecontrol >=0.14.0,<0.15.0
+    - cachecontrol-with-filecache
     - cleo >=2.1.0,<3.0.0
     - crashtest >=0.4.1,<0.5.0
     - dulwich >=0.21.2,<0.22.0
