@@ -1,5 +1,5 @@
 {% set name = "poetry" %}
-{% set version = "1.8.2" %}
+{% set version = "1.8.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/poetry-{{ version }}.tar.gz
-  sha256: 49cceb3838104647c3e1021f3a4f13c6053704cc18d33f849a90fe687a29cb73
+  sha256: 67f4eb68288eab41e841cc71a00d26cf6bdda9533022d0189a145a34d0a35f48
 
 build:
   noarch: python
@@ -45,7 +45,7 @@ requirements:
     - keyring >=24.0.0,<25.0.0
     - packaging >=23.1
     - pexpect >=4.7.0,<5.0.0
-    - pkginfo >=1.9.4,<2.0.0
+    - pkginfo >=1.10.0,<2.0.0
     - platformdirs >=3.0.0,<5
     - pyproject_hooks >=1.0.0,<2.0.0
     - requests >=2.26.0,<3.0.0
