@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   # You NEED to include the platform in the build string to avoid hash collisions
   string: linux_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [linux]
   string: osx_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [osx]
