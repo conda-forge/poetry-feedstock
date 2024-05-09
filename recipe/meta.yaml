@@ -59,9 +59,8 @@ requirements:
     - xattr >=1.0.0,<2.0.0    # [osx]
 
     # Keep the package noarch
-    - __linux  # [linux]
-    - __osx    # [osx]
-    - __win    # [win]
+    - __unix  # [unix]
+    - __win   # [win]
 
 test:
   requires:
