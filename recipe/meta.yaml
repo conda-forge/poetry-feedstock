@@ -1,5 +1,5 @@
 {% set name = "poetry" %}
-{% set version = "1.8.4" %}
+{% set version = "1.8.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,15 +7,11 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poetry-{{ version }}.tar.gz
-  sha256: 5490f8da66d17eecd660e091281f8aaa5554381644540291817c249872c99202
+  sha256: eb2c88d224f58f36df8f7b36d6c380c07d1001bca28bde620f68fc086e881b70
 
 build:
   noarch: python
-  number: 1
-  # You NEED to include the platform in the build string to avoid hash collisions
-  string: linux_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [linux]
-  string: osx_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [osx]
-  string: win_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [win]
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - poetry = poetry.console.application:main
@@ -45,7 +41,7 @@ requirements:
     - keyring >=24.0.0,<25.0.0
     - packaging >=23.1
     - pexpect >=4.7.0,<5.0.0
-    - pkginfo >=1.10.0,<2.0.0
+    - pkginfo >=1.12.0,<2.0.0
     - platformdirs >=3.0.0,<5
     - pyproject_hooks >=1.0.0,<2.0.0
     - requests >=2.26.0,<3.0.0
