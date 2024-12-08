@@ -12,10 +12,6 @@ source:
 build:
   noarch: python
   number: 0
-  # You NEED to include the platform in the build string to avoid hash collisions
-  string: linux_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [linux]
-  string: osx_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [osx]
-  string: win_pyh{{ PKG_HASH }}_{{ PKG_BUILDNUM }}  # [win]
   script: {{ PYTHON }} -m pip install . -vv
   entry_points:
     - poetry = poetry.console.application:main
