@@ -1,5 +1,5 @@
 bot:
-  inspection: hint-grayskull
+  inspection: update-grayskull
 conda_build:
   pkg_format: '2'
 conda_forge_output_validation: true
