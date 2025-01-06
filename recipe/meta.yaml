@@ -1,5 +1,5 @@
 {% set name = "poetry" %}
-{% set version = "1.8.5" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poetry-{{ version }}.tar.gz
-  sha256: eb2c88d224f58f36df8f7b36d6c380c07d1001bca28bde620f68fc086e881b70
+  sha256: 9416b1e3657ed02cda9599ae73b604bd68f187adaa2d8d1bcc804dacfa9bcd1f
 
 build:
   noarch: python
@@ -23,24 +23,21 @@ requirements:
     - pip
   run:
     # Update version number in URL before checking dependencies
-    # https://github.com/python-poetry/poetry/blob/1.7.1/pyproject.toml
+    # https://github.com/python-poetry/poetry/blob/2.0.0/pyproject.toml
     - python >={{ python_min }},<4.0
-    - poetry-core 1.9.1
-    - poetry-plugin-export >=1.6.0,<2.0.0
-    - python-build >=1.0.3,<2.0.0
+    - poetry-core 2.0.0
+    - python-build >=1.2.1,<2.0.0
     # the following syntax makes the update-grayskull bot happier
     - cachecontrol >=0.14.0,<0.15.0
     - cachecontrol-with-filecache
     - cleo >=2.1.0,<3.0.0
-    - crashtest >=0.4.1,<0.5.0
-    - dulwich >=0.21.2,<0.22.0
+    - dulwich >=0.22.6,<0.23.0
     - python-fastjsonschema >=2.18.0,<3.0.0
-    # for all python to stay noarch: python
+    # upstream has this for py < 3.10 but we want to stay noarch: python
     - importlib-metadata >=4.4
     - python-installer >=0.7.0,<0.8.0
-    - keyring >=24.0.0,<25.0.0
-    - packaging >=23.1
-    - pexpect >=4.7.0,<5.0.0
+    - keyring >=25.1.0,<26.0.0
+    - packaging >=24.0
     - pkginfo >=1.12.0,<2.0.0
     - platformdirs >=3.0.0,<5
     - pyproject_hooks >=1.0.0,<2.0.0
