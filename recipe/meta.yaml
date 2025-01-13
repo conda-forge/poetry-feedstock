@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - python {{ python_min }}
-    - poetry-core >=1.5.0
+    - poetry-core >=2.0
     - pip
   run:
     # Update version number in URL before checking dependencies
