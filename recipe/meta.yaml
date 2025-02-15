@@ -1,5 +1,5 @@
 {% set name = "poetry" %}
-{% set version = "2.0.1" %}
+{% set version = "2.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poetry-{{ version }}.tar.gz
-  sha256: a2987c3162f6ded6db890701a6fc657d2cfcc702e9421ef4c345211c8bffc5d5
+  sha256: fe86f70f06f307db9ceb093b66bb85f1391f078eec1b5eda0f52e78541d17105
 
 build:
   noarch: python
@@ -24,8 +24,10 @@ requirements:
   run:
     # Update version number in URL before checking dependencies
     # https://github.com/python-poetry/poetry/blob/2.0.0/pyproject.toml
+    - findpython >=0.6.2,<0.7.0
+    - pbs-installer >=2025.1.6,<2026.0.0
     - python >={{ python_min }},<4.0
-    - poetry-core ==2.0.1
+    - poetry-core ==2.1.0
     - python-build >=1.2.1,<2.0.0
     # the following syntax makes the update-grayskull bot happier
     - cachecontrol >=0.14.0,<0.15.0
