@@ -24,8 +24,6 @@ requirements:
   run:
     # Update version number in URL before checking dependencies
     # https://github.com/python-poetry/poetry/blob/2.0.0/pyproject.toml
-    - findpython >=0.6.2,<0.7.0
-    - pbs-installer >=2025.1.6,<2026.0.0
     - python >={{ python_min }},<4.0
     - poetry-core ==2.1.0
     - python-build >=1.2.1,<2.0.0
@@ -52,6 +50,12 @@ requirements:
     - trove-classifiers >=2022.5.19
     - virtualenv >=20.26.6,<21.0.0
     - xattr >=1.0.0,<2.0.0    # [osx]
+    - findpython >=0.6.2,<0.7.0
+    - pbs-installer >=2025.1.6,<2026.0.0
+    # pbs-installer[download]
+    - httpx <1,>=0.27.0
+    # pbs-installer[install]
+    - zstandard >=0.21.0
 
     # Keep the package noarch
     - __linux  # [linux]
