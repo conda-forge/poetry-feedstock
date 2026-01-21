@@ -1,30 +1,34 @@
-{% set name = "poetry" %}
-{% set version = "2.3.1" %}
+schema_version: 1
+
+context:
+  name: poetry
+  version: 2.3.1
 
 package:
-  name: {{ name|lower }}
-  version: {{ version }}
+  name: ${{ name|lower }}
+  version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poetry-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/poetry-${{ version }}.tar.gz
   sha256: 423cbccfe3533155ce9f49e929780a1386e564b2d97d2380664ea388cfe1191c
 
 build:
+  number: 1
   noarch: python
-  number: 0
-  script: {{ PYTHON }} -m pip install . -vv
-  entry_points:
-    - poetry = poetry.console.application:main
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - poetry = poetry.console.application:main
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python ${{ python_min }}.*
     - poetry-core >=2.0
     - pip
   run:
     # Update version number in URL before checking dependencies
     # https://github.com/python-poetry/poetry/blob/2.0.0/pyproject.toml
-    - python >={{ python_min }},<4.0
+    - python >=${{ python_min }},<4.0
     - poetry-core ==2.3.0
     - python-build >=1.2.1,<2.0.0
     # the following syntax makes the update-grayskull bot happier
@@ -47,38 +51,42 @@ requirements:
     - tomlkit >=0.11.4,<1.0.0
     - trove-classifiers >=2022.5.19
     - virtualenv >=20.26.6
-    - xattr >=1.0.0,<2.0.0    # [osx]
+    - if: osx
+      then: xattr >=1.0.0,<2.0.0
     - findpython >=0.6.2,<0.8.0
     - pbs-installer >=2025.6.10
     # pbs-installer[download]
     - httpx <1,>=0.27.0
     # pbs-installer[install]
     - zstandard >=0.21.0
-
     # Keep the package noarch
-    - __linux  # [linux]
-    - __osx    # [osx]
-    - __win    # [win]
+    - if: linux
+      then: __linux
+    - if: osx
+      then: __osx
+    - if: win
+      then: __win
 
-test:
-  requires:
-    - pip
-    - python {{ python_min }}
-  commands:
-    - pip check
-    - poetry -V
-  imports:
-    - poetry
-    - poetry.config
+tests:
+  - python:
+      imports:
+        - poetry
+        - poetry.config
+      pip_check: true
+      python_version: ${{ python_min }}.*
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - poetry -V
 
 about:
-  home: https://python-poetry.org/
   license: MIT
-  license_family: MIT
   license_file: LICENSE
   summary: Python dependency management and packaging made easy
-  dev_url: https://github.com/python-poetry/poetry
-  doc_url: https://python-poetry.org/docs/
+  homepage: https://python-poetry.org/
+  repository: https://github.com/python-poetry/poetry
+  documentation: https://python-poetry.org/docs/
 
 extra:
   recipe-maintainers:
