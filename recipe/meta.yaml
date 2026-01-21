@@ -33,8 +33,6 @@ requirements:
     - cleo >=2.1.0,<3.0.0
     - dulwich >=0.25.0,<0.26.0
     - python-fastjsonschema >=2.18.0,<3.0.0
-    # upstream has this for py < 3.10 but we want to stay noarch: python
-    - importlib-metadata >=4.4,<8.7
     - python-installer >=0.7.0,<0.8.0
     - keyring >=25.1.0,<26.0.0
     - packaging >=24.2
