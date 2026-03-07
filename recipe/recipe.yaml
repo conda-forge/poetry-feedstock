@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: poetry
-  version: 2.3.1
+  version: "2.3.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/poetry-${{ version }}.tar.gz
-  sha256: 423cbccfe3533155ce9f49e929780a1386e564b2d97d2380664ea388cfe1191c
+  sha256: 6e81526ae99a4f07f75174600bfe8b73e74c786dc18c9d1ce1800dd6f807414b
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -29,13 +29,13 @@ requirements:
     # Update version number in URL before checking dependencies
     # https://github.com/python-poetry/poetry/blob/2.0.0/pyproject.toml
     - python >=${{ python_min }},<4.0
-    - poetry-core ==2.3.0
+    - poetry-core ==2.3.1
     - python-build >=1.2.1,<2.0.0
     # the following syntax makes the update-grayskull bot happier
     - cachecontrol >=0.14.0,<0.15.0
     - cachecontrol-with-filecache
     - cleo >=2.1.0,<3.0.0
-    - dulwich >=0.25.0,<0.26.0
+    - dulwich >=0.25.0,<2
     - python-fastjsonschema >=2.18.0,<3.0.0
     - python-installer >=0.7.0,<0.8.0
     - keyring >=25.1.0,<26.0.0
