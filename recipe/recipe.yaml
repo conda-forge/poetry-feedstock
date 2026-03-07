@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: poetry
-  version: 2.3.1
+  version: "2.3.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/poetry-${{ version }}.tar.gz
-  sha256: 423cbccfe3533155ce9f49e929780a1386e564b2d97d2380664ea388cfe1191c
+  sha256: 6e81526ae99a4f07f75174600bfe8b73e74c786dc18c9d1ce1800dd6f807414b
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
