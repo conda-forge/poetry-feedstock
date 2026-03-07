@@ -35,7 +35,7 @@ requirements:
     - cachecontrol >=0.14.0,<0.15.0
     - cachecontrol-with-filecache
     - cleo >=2.1.0,<3.0.0
-    - dulwich >=0.25.0,<0.26.0
+    - dulwich >=0.25.0,<2
     - python-fastjsonschema >=2.18.0,<3.0.0
     - python-installer >=0.7.0,<0.8.0
     - keyring >=25.1.0,<26.0.0
