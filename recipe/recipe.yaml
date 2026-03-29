@@ -26,10 +26,8 @@ requirements:
     - poetry-core >=2.0
     - pip
   run:
-    # Update version number in URL before checking dependencies
-    # https://github.com/python-poetry/poetry/blob/2.0.0/pyproject.toml
     - python >=${{ python_min }},<4.0
-    - poetry-core ==2.3.1
+    - poetry-core ==2.3.2
     - python-build >=1.2.1,<2.0.0
     # the following syntax makes the update-grayskull bot happier
     - cachecontrol >=0.14.0,<0.15.0
