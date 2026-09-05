@@ -3,4 +3,4 @@ channel_sources:
 channel_targets:
 - conda-forge main
 python_min:
-- '3.10'
+- '3.11'
