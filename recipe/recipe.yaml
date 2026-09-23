@@ -34,7 +34,7 @@ requirements:
       then: __osx
     - if: win
       then: __win
-    - poetry-core ==2.4.0
+    - poetry-core ==2.5.0
     - python-build >=1.2.1,<2.0.0
     # the following syntax makes the update-grayskull bot happier
     - cachecontrol >=0.14.0,<0.15.0
