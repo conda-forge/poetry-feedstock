@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: poetry
-  version: "2.5.1"
+  version: "2.5.2"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
-  sha256: 19fbd566efced512be58989a756aa1333cdc9b6aabb4fc84fd1ec9d29ee74874
+  sha256: 131d6a565f809436918a5aafed34e7013038fc73b4f7b64640dc278f14adc4ea
 
 build:
   number: 0
@@ -47,7 +47,7 @@ requirements:
     - python-installer >=0.7.0,<2.0.0
     - keyring >=25.1.0,<26.0.0
     - packaging >=24.2
-    - pkginfo >=1.12,<2.0
+    - pkginfo >=1.12,<3.0
     - platformdirs >=3.0.0,<5
     - pyproject_hooks >=1.0.0,<2.0.0
     - requests >=2.26,<3.0
@@ -71,7 +71,9 @@ tests:
         - poetry
         - poetry.config
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
