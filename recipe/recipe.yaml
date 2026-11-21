@@ -47,7 +47,7 @@ requirements:
     - python-installer >=0.7.0,<2.0.0
     - keyring >=25.1.0,<26.0.0
     - packaging >=24.2
-    - pkginfo >=1.12,<2.0
+    - pkginfo >=1.12,<3.0
     - platformdirs >=3.0.0,<5
     - pyproject_hooks >=1.0.0,<2.0.0
     - requests >=2.26,<3.0
@@ -71,7 +71,9 @@ tests:
         - poetry
         - poetry.config
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
